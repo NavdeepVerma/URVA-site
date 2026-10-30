@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f6f3;
+  --foreground: #171a1c;
+  --panel: #ffffff;
+  --muted: #f1efe9;
+  --stroke: rgba(23, 26, 28, 0.1);
+  --primary: #d62828;
+  --primary-dark: #b62020;
+  --green: #2d6a47;
+  --charcoal: #171a1c;
+  --neutral: #f1efe9;
+  --radius-xl: 1.75rem;
+  --content-width: min(100%, 80rem);
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 2.5vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: clip;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+form,
+button,
+input,
+select,
+textarea {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo-heading {
+  font-family: var(--font-lexend), "Segoe UI", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+}
+
+p,
+li,
+span,
+button,
+input,
+select,
+textarea {
+  font-size: clamp(0.94rem, 1.5vw, 1rem);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.section-shell {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding-inline: clamp(0.875rem, 2vw, 2rem);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(23, 26, 28, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 26, 28, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
